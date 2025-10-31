@@ -6,7 +6,7 @@ This repo hosts my public Logseq journals and notes cleaned, curated, and publis
 - Built directly from Markdown files (`_posts/` folder).
 - Hosted automatically via **GitHub Pages**.
 - Powered by Jekyll’s `minima` theme (no build chain, no nonsense).
-- Everything here is public — internal or sensitive notes stay in my private Logseq graph reports
+- Everything here is public internal or sensitive notes stay in my private Logseq graph reports
 
 ## 🧩 Structure
 Work in progress! (WIP)
