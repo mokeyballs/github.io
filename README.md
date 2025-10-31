@@ -1,6 +1,6 @@
 # 🧠 Jake’s Logseq Public Notes
 
-This repo hosts my public Logseq journals and notes — cleaned, curated, and published as a simple GitHub Pages site.
+This repo hosts my public Logseq journals and notes cleaned, curated, and published as a simple GitHub Pages site.
 
 ## 📘 Overview
 - Built directly from Markdown files (`_posts/` folder).
