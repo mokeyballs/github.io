@@ -1,4 +1,3 @@
-layout: post
 title: "Homelab Journal – Building a Public Logseq Blog"
 tags: [homelab, logseq, github, journaling]
 
