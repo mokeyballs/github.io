@@ -3,7 +3,7 @@ tags: [homelab, logseq, github, journaling]
 
 
 ## 🧩 Summary
-Today, I decided to take my Logseq journals one step further — turning them into a public, web-readable blog hosted entirely on GitHub Pages. The goal: simplicity, zero external dependencies, and complete control over what gets published.
+Today, I decided to take my Logseq journals one step further, turning them into a public, web-readable blog hosted entirely on GitHub Pages ...the goal: simplicity, zero external dependencies, and complete control over what gets published.
 
 ## 🔧 Work Completed
 - Created a new GitHub repo for public notes.
@@ -26,6 +26,6 @@ Each Logseq daily page that’s worth sharing just becomes a post under `_posts/
 
 ---
 
-*End of Journal – 2025-10-30*
+***End of Journal – 2025-10-30***
 
 STAT TUNED MORE GIT COMMITS AND NOTES TO COME!!
