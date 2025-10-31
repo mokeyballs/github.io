@@ -21,10 +21,9 @@ Today, I decided to take my Logseq journals one step further, turning them into 
 - Possibly integrate **Pagefind** later for client-side search.
 
 ## 💭 Notes
-This project keeps the process dead simple — pure Markdown and Git. No Node build chain, no Eleventy or Hugo complexity.  
+This project keeps the process dead simple pure Markdown and Git. No Node build chain, no Eleventy or Hugo complexity.  
 Each Logseq daily page that’s worth sharing just becomes a post under `_posts/` with front matter and a title.
 
----
 
 ***End of Journal – 2025-10-30***
 
