@@ -1,4 +1,4 @@
-title: "Homelab Journal – Building a Public Logseq Blog"
+Ritle: "Homelab Journal – Building a Public Logseq Blog"
 tags: [homelab, logseq, github, journaling]
 
 
