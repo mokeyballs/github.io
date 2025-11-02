@@ -1,32 +1,35 @@
-title: "Building a SR Linux OSPF Lab on macOS with Containerlab & Ansible"
+---
+layout: post
+title: "Nokia SR Linux OSPF Lab on macOS — Containerlab + Ansible Automation"
 date: 2025-10-31 12:30:00 -0500
 categories: [networking, automation, srlinux, containerlab, ansible]
 tags: [nokia, srlinux, containerlab, ansible, devops, macos, orbstack]
-description: Step-by-step build of a lightweight Nokia SR Linux OSPF lab using Containerlab, OrbStack, and Ansible automation on macOS.
+description: A step-by-step guide to building a lightweight Nokia SR Linux OSPF lab on macOS using Containerlab, OrbStack, and Ansible automation.
 ---
 
 ## 🧠 Overview
 
-This post walks through deploying a two-node Nokia SR Linux topology using **Containerlab** on macOS (Apple Silicon), validating OSPF adjacency, and preparing for Ansible-based automation.
+This guide demonstrates how to build a **two-node Nokia SR Linux topology** using **Containerlab** on **macOS (Apple Silicon)**.  
+You’ll validate **OSPF adjacency**, save startup configs, and prep the environment for **Ansible-based automation** — all without needing VMs or external hypervisors.
 
-Everything runs locally through **OrbStack**, providing native Linux environments and container networking on macOS — no external hypervisors required.
-
----
-
-## 🧱 Environment
-
-- **Host:** macOS (Apple Silicon)
-- **Tools:**
-  - OrbStack (Linux runtime)
-  - Containerlab `v0.71.0`
-  - Ansible `core 2.16.3`
-  - Installed collections: `nokia.srlinux`, `ansible.netcommon`
-- **Images:**
-  - `ghcr.io/nokia/srlinux:24.10.2-357-arm64`
+Everything runs locally through **OrbStack**, providing native Linux environments and full container networking.
 
 ---
 
-## ⚙️ Lab Topology
+## 🧱 Environment Setup
+
+| Component | Version / Detail |
+|------------|------------------|
+| Host OS | macOS (Apple Silicon) |
+| Linux Runtime | OrbStack |
+| Containerlab | v0.71.0 |
+| Ansible | core 2.16.3 |
+| Collections | `nokia.srlinux`, `ansible.netcommon` |
+| Image | `ghcr.io/nokia/srlinux:24.10.2-357-arm64` |
+
+---
+
+## ⚙️ Topology Definition
 
 ```yaml
 name: srl01
@@ -44,72 +47,59 @@ topology:
       startup-config: /home/labs/srl01/sr2.cfg
   links:
     - endpoints: ["sr1:ethernet-1/1", "sr2:ethernet-1/1"]
-```
+🚀 Deploying the Lab
+Run:
 
----
-
-## 🔍 Deployment
-
-```bash
+bash
+Copy code
 sudo containerlab deploy -t srl01.clab.yml
-```
-
 Expected output:
 
-```
+arduino
+Copy code
 ╭────────────────┬─────────────────────────────────────────┬─────────┬───────────────────╮
 │      Name      │                Kind/Image               │  State  │   IPv4/6 Address  │
 ├────────────────┼─────────────────────────────────────────┼─────────┼───────────────────┤
 │ clab-srl01-sr1 │ nokia_srlinux                           │ running │ 172.20.20.2       │
 │ clab-srl01-sr2 │ nokia_srlinux                           │ running │ 172.20.20.3       │
 ╰────────────────┴─────────────────────────────────────────┴─────────┴───────────────────╯
-```
+🧩 Configuring OSPF
+Enter candidate mode on each SR Linux node:
 
----
+bash
+Copy code
+enter candidate
+set network-instance default protocols ospf instance 0 admin-state enable
+commit now
+save startup
+Validate OSPF adjacency:
 
-## 🔧 Configuration Steps
+bash
+Copy code
+show network-instance default protocols ospf neighbor
+Example output:
 
-1. Enter configuration mode on each node:
-   ```bash
-   enter candidate
-   set network-instance default protocols ospf instance 0 admin-state enable
-   commit now
-   save startup
-   ```
+sql
+Copy code
+ethernet-1/1.0 → Neighbor 1.1.1.1, State: FULL
+Persistence Check:
 
-2. Verify adjacency:
-   ```bash
-   show network-instance default protocols ospf neighbor
-   ```
+Redeploy with containerlab deploy -t srl01.clab.yml
 
-   Example output:
-   ```
-   ethernet-1/1.0 → Neighbor 1.1.1.1, State: FULL
-   ```
+OSPF adjacency forms automatically from startup configs ✅
 
-3. Confirm persistence:
-   - Redeploy with `containerlab deploy -t srl01.clab.yml`
-   - OSPF forms automatically from startup configs ✅
+✅ Validation Results
+Check	Result
+SR Linux nodes deploy cleanly	✅
+Startup configs load correctly	✅
+OSPF adjacency forms automatically	✅
+Ready for Ansible integration	✅
 
----
+🧭 Next Steps
+Build an Ansible inventory and playbook to query OSPF neighbor state.
 
-## 🧩 Results
+Add EOS or IOL nodes for multi-vendor topologies.
 
-| Check | Status |
-|-------|---------|
-| SR Linux nodes deploy cleanly | ✅ |
-| Startup configs load correctly | ✅ |
-| OSPF adjacency forms automatically | ✅ |
-| Ready for Ansible automation | ✅ |
+Experiment with FastMCP 2.0 for dynamic network orchestration.
 
----
-
-## 🚀 Next Steps
-
-- Build an **Ansible inventory** and playbook to validate OSPF neighbor state.
-- Extend topology to include SR → EOS or IOL nodes.
-- Experiment with **FastMCP 2.0** for dynamic network orchestration.
-
----
-
-*Built and tested on macOS using OrbStack — no virtual machines, no overhead, just clean network automation.*
+Integrate telemetry via Prometheus + Grafana for real-time metrics.
