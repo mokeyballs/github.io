@@ -1,5 +1,3 @@
----
-layout: post
 title: "Building a SR Linux OSPF Lab on macOS with Containerlab & Ansible"
 date: 2025-10-31 12:30:00 -0500
 categories: [networking, automation, srlinux, containerlab, ansible]
