@@ -1,5 +1,5 @@
 # 🧠 Jake’s Logseq Public Notes 
-(EMBRACING THE USE OF AI AS A PROMPT ENGINEER) 
+(EMBRACING THE USE OF A.I AS A PROMPT ENGINEER) 
 
 This repository hosts my public Logseq journals and notes, which have been cleaned, curated, and published as a simple GitHub Pages site.
 
