@@ -1,4 +1,5 @@
-# 🧠 Jake’s Logseq Public Notes (EMBRACING AI AS A PROMPT ENGINER) 
+# 🧠 Jake’s Logseq Public Notes 
+(EMBRACING AI AS A PROMPT ENGINEER) 
 
 This repository hosts my public Logseq journals and notes, which have been cleaned, curated, and published as a simple GitHub Pages site.
 
