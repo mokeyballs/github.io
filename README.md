@@ -12,3 +12,5 @@ This repository hosts my public Logseq journals and notes, which have been clean
 Work in progress! (WIP)
 
 NOTE: No personally identifiable information (PII), internal IP addresses, Excel-spreadsheets, or passwords are ever stored or committed to GitHub. All public-facing notes are sanitized, redacted, and minimized to include only essential technical or contextual details for brevity and clarity.
+
+**MORE TO COME STAY TUNNED**
