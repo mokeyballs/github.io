@@ -110,7 +110,7 @@ timedatectl
 
 ---
 
-**Author:** JAKE
+**Author:**  JAKE
 **Environment:** Proxmox Backup Server (Debian-based VM on TrueNAS BACKUP SERVER)  
 **Date:** 2025-11-07  
 **Status:** ✅ Resolved  
