@@ -13,7 +13,7 @@ The Proxmox Backup Server (PBS) entered **emergency mode** due to a **broken `/e
 The system misinterpreted a standard **ext4 volume** as a **ZFS pool**, causing dependency failures during the boot sequence.
 
 ## 🧠 Impact
-- **Service:** PBS Web UI and scheduled backups unavailable until recovery.  
+- **Service:** PBS Web UI and scheduled backups are unavailable until recovery.  
 - **Data:** No data loss — ext4 volume intact.  
 - **Scope:** Single PBS host (running on TrueNAS VM).  
 - **Duration:** From boot (Nov 6, 2025) until config cleanup.
@@ -29,7 +29,7 @@ The system misinterpreted a standard **ext4 volume** as a **ZFS pool**, causing 
 - `journalctl -p err -b` showed:
   - `zfs-import@SingleDisk.service` failures
   - RRD update warnings: “time in past” (from NTP sync delay)
-- Disk listing (`df -h`) confirmed healthy ext4 volume mounted at `/mnt/datastore/SingleDisk`.
+- Disk listing (`df -h`) confirmed a healthy ext4 volume mounted at `/mnt/datastore/SingleDisk`.
 
 ## ⚙️ Root Cause
 1. **Invalid `/etc/fstab` entry**
