@@ -1,5 +1,5 @@
 # Ansible Control Node Setup — Homelab Notes (Redacted)
-*Date: YYYY-MM-DD*
+*Date: 2025-11-16*
 
 ## 🧩 Overview
 This document summarizes the work completed to establish a functional Ansible control node for homelab automation. All sensitive information, IP addresses, hostnames, and secret variables have been intentionally redacted or generalized for public publication.
