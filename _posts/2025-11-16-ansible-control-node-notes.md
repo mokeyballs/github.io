@@ -1,8 +1,8 @@
-# Ansible Control Node Setup — Homelab Notes (Redacted)
+# Ansible Control Node Setup — Homelab Notes
 *Date: 2025-11-16*
 
 ## 🧩 Overview
-This document summarizes the work completed to establish a functional Ansible control node for homelab automation. All sensitive information, IP addresses, hostnames, and secret variables have been intentionally redacted or generalized for public publication.
+This document summarizes the work completed to establish a functional Ansible control node for homelab automation. All sensitive information, including IP addresses, hostnames, and secret variables, has been intentionally redacted or generalized for public publication.
 
 ---
 
@@ -13,7 +13,7 @@ This document summarizes the work completed to establish a functional Ansible co
 - Verified proper system access after reboot and confirmed administrative privileges restored.
 
 ### **2. Ansible Control Node Configuration**
-- Created dedicated automation user with restricted permissions and passwordless privilege escalation.
+- Created a dedicated automation user with restricted permissions and passwordless privilege escalation.
 - Validated correct home directory structure and environment variables.
 - Confirmed functional Ansible installation using the system package manager.
 
